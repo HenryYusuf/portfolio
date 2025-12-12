@@ -63,24 +63,50 @@ useSeoMeta({
       id="hero-section"
       class="bg-secondary pt-24 pb-20 z-10"
     >
-      <UContainer class="px-8">
-        <h2 class="font-secondary text-4xl text-white">
-          <span class="font-extralight">Looking For</span> <span class="font-bold">Fullstack Website Developer ?</span>
-        </h2>
-        <div class="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
+      <UContainer class="flex flex-col px-8">
+        <div class="flex flex-col items-start text-white">
+          <h2 class="text-4xl mb-7 font-secondary">
+            <span class="font-extralight">Looking For</span> <span class="font-semibold">Fullstack Website Developer
+              ?</span>
+          </h2>
+          <div class="mb-7">
+            <img
+              src="/assets/images/hero/arrow.png"
+              alt="Arrow"
+            >
+          </div>
+          <div>
+            <p class="font-display text-xl font-medium leading-loose mb-7">
+              My work spans across multiple disciplines,
+              from
+              graphic design
+              and branding to web
+              and user interface
+              design, allowing me to craft visually compelling and functional solutions tailored to meet each
+            </p>
+          </div>
+          <div>
+            <NuxtLink
+              class="flex items-center justify-center bg-primary border-primary hover:bg-white text-default text-sm font-semibold rounded-xl space-x-2.5 py-3 px-5"
+            >
+              <span>Explore My Works</span>
+              <Icon
+                name="lucide:arrow-up-right"
+                size="16"
+              />
+            </NuxtLink>
+          </div>
         </div>
-        <div class="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
-        </div>
-        <div class="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
-        </div>
-        <div class="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
-        </div>
-        <div class="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
+        <div class="flex flex-col items-center py-4 px-4">
+          <div
+            class="relative z-10 my-0 mx-auto text-white pt-12 before:absolute before:top-28 before:rounded-4xl before:rotate-0 before:inset-0 before:h-4/5 before:bg-primary before:-z-10 after:absolute after:top-28 after:rounded-4xl after:rotate-6 after:inset-0 after:h-4/5 after:bg-primary after:-z-10"
+          >
+            <img
+              src="/assets/images/person/person1.png"
+              alt="Person Image"
+              class=""
+            >
+          </div>
         </div>
       </UContainer>
     </section>
