@@ -49,14 +49,14 @@ useSeoMeta({
         />
       </template>
 </UHeader> -->
-    <UContainer class="sticky top-5 flex justify-between items-center font-display text-base font-normal">
+    <UContainer class="absolute top-5 flex justify-between items-center font-display text-base font-normal">
       <div>
         <img
           src="/assets/images/logo/logo.png"
           alt="Logo"
         >
       </div>
-      <div class="flex py-4 px-9 border rounded-lg space-x-5">
+      <div class="hidden lg:flex py-4 px-9 border rounded-lg space-x-5">
         <NuxtLink to="home">Home</NuxtLink>
         <NuxtLink to="about-me">About Me</NuxtLink>
         <NuxtLink to="portfolio">Portfolio</NuxtLink>
@@ -67,7 +67,7 @@ useSeoMeta({
       <div class="flex items-center space-x-4">
         <NuxtLink
           to="contact"
-          class="flex items-center justify-center bg-primary text-default text-sm font-semibold rounded-xl space-x-2.5 py-3 px-5"
+          class="hidden md:flex items-center justify-center bg-primary text-default text-sm font-semibold rounded-xl space-x-2.5 py-3 px-5"
         >
           <span>Let's Talk</span>
           <Icon name="lucide:arrow-up-right" />
@@ -80,6 +80,32 @@ useSeoMeta({
         </div>
       </div>
     </UContainer>
+
+    <section
+      id="hero-section"
+      class="bg-secondary pt-24 pb-20 z-10"
+    >
+      <UContainer class="px-8">
+        <h2 class="font-secondary text-4xl text-white">
+          <span class="font-extralight">Looking For</span> <span class="font-bold">Fullstack Website Developer ?</span>
+        </h2>
+        <div class="text-white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
+        </div>
+        <div class="text-white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
+        </div>
+        <div class="text-white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
+        </div>
+        <div class="text-white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
+        </div>
+        <div class="text-white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sequi?
+        </div>
+      </UContainer>
+    </section>
 
     <UMain>
       <NuxtPage />
