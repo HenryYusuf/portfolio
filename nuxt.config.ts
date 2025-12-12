@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/fonts', '@nuxt/icon'],
 
+  ssr: false,
+
   devtools: {
     enabled: true
   },
