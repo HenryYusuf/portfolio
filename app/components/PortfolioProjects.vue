@@ -48,7 +48,7 @@ const projects = [
   <section id="projects" class="projects-section" aria-labelledby="projects-heading">
     <div class="projects-inner">
       <div class="section-divider animate-fade-in">
-        <span class="section-label">03 / projects</span>
+        <span class="section-label">04 / projects</span>
       </div>
 
       <div class="projects-header animate-slide-up">
@@ -198,7 +198,7 @@ const projects = [
 <style scoped>
 .projects-section {
   padding: 8rem 2rem;
-  background: var(--bg);
+  background: var(--bg-raised);
 }
 
 .projects-inner {

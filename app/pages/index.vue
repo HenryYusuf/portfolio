@@ -2,6 +2,7 @@
   <div>
     <PortfolioHero />
     <PortfolioAbout />
+    <PortfolioExperience />
     <PortfolioSkills />
     <PortfolioProjects />
     <PortfolioContact />

@@ -5,8 +5,8 @@ const skillGroups = [
     icon: '◈',
     skills: [
       { name: 'TypeScript', status: 'CORE', role: 'Type-Safe Orchestration' },
-      { name: 'Vue', status: 'CORE', role: 'Reactive Frameworks' },
-      { name: 'Nuxt', status: 'PROD', role: 'Server-Side Rendering' },
+      { name: 'Vue / Nuxt', status: 'CORE', role: 'Reactive Frameworks' },
+      { name: 'Flutter', status: 'STK', role: 'Cross-Platform Applications' },
       { name: 'CSS / Animation', status: 'STK', role: 'Fluid Interactions' }
     ]
   },
@@ -54,7 +54,7 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
 
     <div class="skills-inner">
       <div class="section-divider animate-fade-in">
-        <span class="section-label">02 / skills</span>
+        <span class="section-label">03 / skills</span>
       </div>
 
       <h2 id="skills-heading" class="skills-heading animate-slide-up">

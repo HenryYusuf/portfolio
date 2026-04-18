@@ -41,7 +41,7 @@ async function handleSubmit() {
     <div class="contact-inner">
       <div class="contact-left">
         <div class="section-divider animate-fade-in">
-          <span class="section-label">04 / contact</span>
+          <span class="section-label">05 / contact</span>
         </div>
 
         <h2 id="contact-heading" class="contact-heading animate-slide-up">
