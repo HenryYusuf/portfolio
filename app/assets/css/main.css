@@ -11,10 +11,10 @@
   --font-mono:    'JetBrains Mono', monospace;
   --font-sans:    'JetBrains Mono', monospace;
 
-  /* Accent — phosphor green */
-  --color-accent:        #00ff87;
-  --color-accent-dim:    #00cc6a;
-  --color-accent-glow:   rgba(0, 255, 135, 0.15);
+  /* Accent — electric cobalt (cathode-ray blue) */
+  --color-accent:        #38b6ff;
+  --color-accent-dim:    #0099e6;
+  --color-accent-glow:   rgba(56, 182, 255, 0.14);
 
   /* Neutrals */
   --color-ink:           #080c0a;
@@ -34,18 +34,18 @@
   --color-paper-text:    #1a1a1a;
   --color-paper-secondary: #5a5248;
 
-  /* Nuxt UI primary mapping */
-  --color-primary-50:  #e6fff4;
-  --color-primary-100: #b3ffe0;
-  --color-primary-200: #66ffbf;
-  --color-primary-300: #00ff87;
-  --color-primary-400: #00d96f;
-  --color-primary-500: #00b359;
-  --color-primary-600: #008c45;
-  --color-primary-700: #006633;
-  --color-primary-800: #004022;
-  --color-primary-900: #001a0e;
-  --color-primary-950: #000d07;
+  /* Nuxt UI primary mapping — electric cobalt scale */
+  --color-primary-50:  #e8f5ff;
+  --color-primary-100: #c2e3ff;
+  --color-primary-200: #8cceff;
+  --color-primary-300: #38b6ff;
+  --color-primary-400: #0099e6;
+  --color-primary-500: #0077cc;
+  --color-primary-600: #005fab;
+  --color-primary-700: #004a8a;
+  --color-primary-800: #003469;
+  --color-primary-900: #001e42;
+  --color-primary-950: #000e21;
 }
 
 /* ─── Global Reset & Base ────────────────────────────────────── */
@@ -74,6 +74,8 @@ html {
   --accent:       var(--color-accent);
   --accent-dim:   var(--color-accent-dim);
   --accent-glow:  var(--color-accent-glow);
+  /* Subtle blue tint on dark surfaces */
+  --surface-tint: rgba(56, 182, 255, 0.04);
   --noise-url:    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
 }
 
@@ -86,9 +88,10 @@ html {
   --text-bright:  #0a0a0a;
   --text-dim:     var(--color-paper-secondary);
   --text-muted:   #8a8070;
-  --accent:       #007a40;
-  --accent-dim:   #005c30;
-  --accent-glow:  rgba(0, 122, 64, 0.12);
+  /* Prussian blue for light mode — rich, not washed out */
+  --accent:       #005fab;
+  --accent-dim:   #004a8a;
+  --accent-glow:  rgba(0, 95, 171, 0.12);
 }
 
 body {
