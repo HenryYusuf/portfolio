@@ -1,18 +1,233 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-@theme static {
-  --font-sans: 'Public Sans', sans-serif;
+/* ─── Fonts ──────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Syne:wght@400..800&display=swap');
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+/* ─── Design Tokens ──────────────────────────────────────────── */
+@theme static {
+  /* Fonts */
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+  --font-sans:    'JetBrains Mono', monospace;
+
+  /* Accent — phosphor green */
+  --color-accent:        #00ff87;
+  --color-accent-dim:    #00cc6a;
+  --color-accent-glow:   rgba(0, 255, 135, 0.15);
+
+  /* Neutrals */
+  --color-ink:           #080c0a;
+  --color-ink-subtle:    #0f1510;
+  --color-surface:       #12181a;
+  --color-surface-raised: #1c2426;
+  --color-border:        #2a3436;
+  --color-muted:         #4a6068;
+  --color-text-secondary: #8aa4ac;
+  --color-text:          #dceef2;
+  --color-text-bright:   #f0f8fa;
+
+  /* Light mode overrides — applied via .light class */
+  --color-paper:         #f5f0e8;
+  --color-paper-raised:  #ede8de;
+  --color-paper-border:  #c8c0b0;
+  --color-paper-text:    #1a1a1a;
+  --color-paper-secondary: #5a5248;
+
+  /* Nuxt UI primary mapping */
+  --color-primary-50:  #e6fff4;
+  --color-primary-100: #b3ffe0;
+  --color-primary-200: #66ffbf;
+  --color-primary-300: #00ff87;
+  --color-primary-400: #00d96f;
+  --color-primary-500: #00b359;
+  --color-primary-600: #008c45;
+  --color-primary-700: #006633;
+  --color-primary-800: #004022;
+  --color-primary-900: #001a0e;
+  --color-primary-950: #000d07;
+}
+
+/* ─── Global Reset & Base ────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "liga" 1, "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── CSS Variables (dark default) ──────────────────────────── */
+:root {
+  --bg:           var(--color-ink);
+  --bg-raised:    var(--color-surface);
+  --bg-card:      var(--color-surface-raised);
+  --border:       var(--color-border);
+  --text:         var(--color-text);
+  --text-bright:  var(--color-text-bright);
+  --text-dim:     var(--color-text-secondary);
+  --text-muted:   var(--color-muted);
+  --accent:       var(--color-accent);
+  --accent-dim:   var(--color-accent-dim);
+  --accent-glow:  var(--color-accent-glow);
+  --noise-url:    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.light {
+  --bg:           var(--color-paper);
+  --bg-raised:    var(--color-paper-raised);
+  --bg-card:      #e8e2d8;
+  --border:       var(--color-paper-border);
+  --text:         var(--color-paper-text);
+  --text-bright:  #0a0a0a;
+  --text-dim:     var(--color-paper-secondary);
+  --text-muted:   #8a8070;
+  --accent:       #007a40;
+  --accent-dim:   #005c30;
+  --accent-glow:  rgba(0, 122, 64, 0.12);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Typography ─────────────────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-mono    { font-family: var(--font-mono); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-bright);
+  letter-spacing: -0.02em;
+}
+
+/* ─── Utility Classes ────────────────────────────────────────── */
+.text-accent   { color: var(--accent); }
+.text-dim      { color: var(--text-dim); }
+.text-muted    { color: var(--text-muted); }
+.bg-raised     { background: var(--bg-raised); }
+.bg-card       { background: var(--bg-card); }
+.border-subtle { border-color: var(--border); }
+
+/* ─── Noise Texture Overlay ──────────────────────────────────── */
+.noise-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: var(--noise-url);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+}
+
+/* ─── Glow Effect ────────────────────────────────────────────── */
+.glow {
+  text-shadow: 0 0 40px var(--accent-glow), 0 0 80px var(--accent-glow);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ─── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+
+/* ─── Focus ──────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Animations ─────────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--border); }
+  50%       { border-color: var(--accent); }
+}
+
+.animate-slide-up       { animation: slide-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-slide-in-left  { animation: slide-in-left 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-fade-in        { animation: fade-in 0.6s ease both; }
+.animate-blink          { animation: blink 1s step-end infinite; }
+.animate-marquee        { animation: marquee 28s linear infinite; }
+
+.delay-100  { animation-delay: 0.1s; }
+.delay-200  { animation-delay: 0.2s; }
+.delay-300  { animation-delay: 0.3s; }
+.delay-400  { animation-delay: 0.4s; }
+.delay-500  { animation-delay: 0.5s; }
+.delay-600  { animation-delay: 0.6s; }
+.delay-700  { animation-delay: 0.7s; }
+.delay-800  { animation-delay: 0.8s; }
+
+/* ─── Section Divider ────────────────────────────────────────── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.section-divider::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 1.2em;
+  background: var(--accent);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── Nuxt UI overrides ──────────────────────────────────────── */
+.nuxt-ui-header {
+  background: color-mix(in srgb, var(--bg) 85%, transparent) !important;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
 }

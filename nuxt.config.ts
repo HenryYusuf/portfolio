@@ -11,6 +11,17 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  app: {
+    head: {
+      title: 'Alex Vega — Full-Stack Developer',
+      link: [
+        // Google Fonts preconnect for performance
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }
+      ]
+    }
+  },
+
   routeRules: {
     '/': { prerender: true }
   },
