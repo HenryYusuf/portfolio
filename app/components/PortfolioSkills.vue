@@ -4,40 +4,35 @@ const skillGroups = [
     category: 'Frontend',
     icon: '◈',
     skills: [
-      { name: 'TypeScript', level: 95 },
-      { name: 'Vue / Nuxt', level: 92 },
-      { name: 'React / Next', level: 85 },
-      { name: 'CSS / Animation', level: 88 }
+      { name: 'TypeScript', status: 'CORE', role: 'Type-Safe Orchestration' },
+      { name: 'Vue', status: 'CORE', role: 'Reactive Frameworks' },
+      { name: 'Nuxt', status: 'PROD', role: 'Server-Side Rendering' },
+      { name: 'CSS / Animation', status: 'STK', role: 'Fluid Interactions' }
     ]
   },
   {
     category: 'Backend',
     icon: '◎',
     skills: [
-      { name: 'Node.js', level: 93 },
-      { name: 'Go', level: 80 },
-      { name: 'PostgreSQL', level: 88 },
-      { name: 'Redis', level: 82 }
+      { name: 'PHP/Laravel', status: 'CORE', role: 'Web Application Framework' },
+      { name: 'Node.js', status: 'CORE', role: 'Server Runtime' },
+      { name: 'PostgreSQL', status: 'CORE', role: 'Relational Data' },
+      { name: 'Go', status: 'STK', role: 'High-Performance APIs' },
     ]
   },
   {
     category: 'Infrastructure',
     icon: '◆',
     skills: [
-      { name: 'AWS / CDK', level: 85 },
-      { name: 'Docker', level: 90 },
-      { name: 'Kubernetes', level: 72 },
-      { name: 'CI/CD', level: 88 }
+      { name: 'Docker', status: 'CORE', role: 'Containerization' },
+      { name: 'CI/CD', status: 'CORE', role: 'Delivery Pipelines' }
     ]
   },
   {
     category: 'Craft',
     icon: '◇',
     skills: [
-      { name: 'Architecture', level: 88 },
-      { name: 'Code Review', level: 94 },
-      { name: 'Documentation', level: 90 },
-      { name: 'Mentorship', level: 85 }
+      { name: 'Documentation', status: 'CORE', role: 'Knowledge Transfer' },
     ]
   }
 ]
@@ -85,16 +80,10 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
               :key="skill.name"
               class="skill-item"
             >
-              <div class="skill-meta">
-                <span class="skill-name">{{ skill.name }}</span>
-                <span class="skill-pct text-accent">{{ skill.level }}</span>
-              </div>
-              <div class="skill-bar" :aria-label="`${skill.name}: ${skill.level}%`">
-                <div
-                  class="skill-fill"
-                  :style="`width: ${skill.level}%`"
-                />
-              </div>
+              <span :class="['status-tag', `status-${skill.status.toLowerCase()}`]">[ {{ skill.status }} ]</span>
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="leader-dots" aria-hidden="true"></span>
+              <span class="skill-role">/ {{ skill.role }}</span>
             </li>
           </ul>
         </article>
@@ -210,7 +199,7 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
   color: var(--text-dim);
 }
 
-/* ── Skills ──────────────────────────────────────────────── */
+/* ── Skills - Manifest ───────────────────────────────────── */
 .skill-list {
   display: flex;
   flex-direction: column;
@@ -221,47 +210,91 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
 
 .skill-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.skill-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.skill-name {
+  align-items: center;
+  gap: 0.75rem;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.skill-item:hover {
   color: var(--text);
 }
 
-.skill-pct {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
+.status-tag {
+  font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-}
-
-.skill-pct::after {
-  content: '%';
-  opacity: 0.5;
-  font-size: 0.6rem;
-}
-
-.skill-bar {
-  height: 3px;
-  background: var(--border);
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--border);
   border-radius: 2px;
-  overflow: hidden;
+  min-width: 50px;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-.skill-fill {
-  height: 100%;
-  background: linear-gradient(to right, var(--accent-dim), var(--accent));
-  border-radius: 2px;
-  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+.status-core {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+}
+.status-prod {
+  color: var(--text-bright);
+  border-color: var(--border);
+}
+.status-stk {
+  color: var(--text-dim);
+  border-color: var(--border);
+}
+.status-arc {
+  color: #a8b1ff;
+  border-color: color-mix(in srgb, #a8b1ff 30%, transparent);
+  background: color-mix(in srgb, #a8b1ff 5%, transparent);
+}
+
+.skill-item:hover .status-tag {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--accent);
+}
+
+.skill-item:hover .status-arc {
+  border-color: #a8b1ff;
+  box-shadow: 0 0 8px color-mix(in srgb, #a8b1ff 20%, transparent);
+  color: #a8b1ff;
+}
+
+.skill-name {
+  color: var(--text);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.leader-dots {
+  flex-grow: 1;
+  min-width: 1rem;
+  height: 1px;
+  background-image: linear-gradient(to right, var(--text-dim) 20%, transparent 20%);
+  background-size: 4px 1px;
+  background-repeat: repeat-x;
+  background-position: center;
+  opacity: 0.3;
+  transition: opacity 0.2s, background-image 0.2s;
+  position: relative;
+}
+
+.skill-item:hover .leader-dots {
+  opacity: 0.7;
+  background-image: linear-gradient(to right, var(--accent) 20%, transparent 20%);
+}
+
+.skill-role {
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 /* ── Responsive ─────────────────────────────────────────── */
@@ -269,5 +302,16 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
   .skills-section { padding: 5rem 0; }
   .skills-grid { grid-template-columns: 1fr; }
   .skills-heading { font-size: 2.2rem; }
+  
+  .skill-item {
+    gap: 0.5rem;
+  }
+  .status-tag {
+    min-width: 44px;
+    font-size: 0.55rem;
+  }
+  .skill-role {
+    font-size: 0.65rem;
+  }
 }
 </style>
