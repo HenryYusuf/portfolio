@@ -51,11 +51,8 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
     <!-- Scrolling ticker strip (the diagonal grid-breaker) -->
     <div class="skills-ticker" aria-hidden="true">
       <div class="ticker-track">
-        <span v-for="(t, i) in [...ticker, ...ticker]" :key="`t-${i}`" class="ticker-item">
-          {{ t }}
-          <svg width="6" height="6" viewBox="0 0 6 6" fill="var(--accent)" aria-hidden="true">
-            <polygon points="3,0 6,6 0,6"/>
-          </svg>
+        <span v-for="(t, i) in [...ticker, ...ticker, ...ticker, ...ticker]" :key="`t-${i}`" class="ticker-item">
+          {{ t }}<svg width="6" height="6" viewBox="0 0 6 6" fill="var(--accent)" aria-hidden="true"><polygon points="3,0 6,6 0,6"/></svg>
         </span>
       </div>
     </div>
@@ -133,15 +130,16 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
 
 .ticker-track {
   display: flex;
-  gap: 2rem;
   width: max-content;
   animation: marquee 28s linear infinite;
+  will-change: transform;
 }
 
 .ticker-item {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
+  margin-right: 2rem; /* Consistent spacing for seamless loop */
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
