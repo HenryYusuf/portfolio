@@ -42,7 +42,7 @@ const skillGroups = [
   }
 ]
 
-const ticker = ['TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 'PostgreSQL', 'Redis', 'AWS', 'Docker', 'Kubernetes', 'CI/CD', 'REST', 'GraphQL', 'WebSockets', 'Linux', 'Git']
+const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 'PostgreSQL', 'Docker', 'CI/CD', 'REST', 'WebSockets', 'Linux', 'Git']
 </script>
 
 <template>

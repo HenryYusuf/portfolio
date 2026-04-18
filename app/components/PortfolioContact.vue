@@ -56,17 +56,17 @@ async function handleSubmit() {
 
         <!-- Direct links -->
         <div class="contact-channels animate-slide-up delay-300">
-          <a href="mailto:alex@example.com" class="channel-item" id="contact-email">
+          <a href="mailto:baharhenry10@gmail.com" class="channel-item" id="contact-email">
             <span class="channel-icon text-accent" aria-hidden="true">@</span>
-            <span class="channel-label">alex@example.com</span>
+            <span class="channel-label">baharhenry10@gmail.com</span>
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener" class="channel-item" id="contact-github">
+          <a href="https://github.com/HenryYusuf" target="_blank" rel="noopener" class="channel-item" id="contact-github">
             <span class="channel-icon text-accent" aria-hidden="true">◈</span>
-            <span class="channel-label">github.com/alexvega</span>
+            <span class="channel-label">github.com/HenryYusuf</span>
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener" class="channel-item" id="contact-linkedin">
+          <a href="https://linkedin.com/in/henryby/" target="_blank" rel="noopener" class="channel-item" id="contact-linkedin">
             <span class="channel-icon text-accent" aria-hidden="true">◆</span>
-            <span class="channel-label">linkedin.com/in/alexvega</span>
+            <span class="channel-label">linkedin.com/in/henryby</span>
           </a>
         </div>
       </div>

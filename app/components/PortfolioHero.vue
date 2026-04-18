@@ -59,7 +59,7 @@ onUnmounted(() => clearTimeout(timer))
     <div class="hero-content">
       <!-- Terminal prompt line -->
       <div class="terminal-prompt animate-slide-up" aria-hidden="true">
-        <span class="shell-user text-accent">alex@vega</span>
+        <span class="shell-user text-accent">henry@yusuf</span>
         <span class="shell-sep text-dim">:</span>
         <span class="shell-dir text-dim">~/portfolio</span>
         <span class="shell-dollar text-accent"> $&nbsp;</span>
@@ -68,7 +68,7 @@ onUnmounted(() => clearTimeout(timer))
 
       <!-- Main heading -->
       <h1 class="hero-heading animate-slide-up delay-200">
-        <span class="hero-name">Alex Vega</span>
+        <span class="hero-name">Henry Yusuf</span>
         <br />
         <span class="hero-role">I&nbsp;</span>
         <span class="hero-typewriter text-accent">{{ displayed }}</span>
@@ -77,8 +77,8 @@ onUnmounted(() => clearTimeout(timer))
 
       <!-- Sub line -->
       <p class="hero-sub animate-slide-up delay-400">
-        Full-stack engineer · 6 years · TypeScript, Nuxt, Go, AWS<br />
-        Building systems that scale without drama.
+        Full-stack engineer · 1 years · TypeScript, Nuxt, Go, PHP, Laravel<br />
+        Building scalable and maintainable systems.
       </p>
 
       <!-- CTAs -->

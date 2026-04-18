@@ -31,7 +31,7 @@
         <div class="name-card">
           <div class="name-tag">
             <span class="name-tag-label">name</span>
-            <span class="name-tag-value">Alex Vega</span>
+            <span class="name-tag-value">Henry Yusuf</span>
           </div>
           <div class="name-tag">
             <span class="name-tag-label">role</span>
@@ -39,11 +39,11 @@
           </div>
           <div class="name-tag">
             <span class="name-tag-label">base</span>
-            <span class="name-tag-value">Berlin, DE</span>
+            <span class="name-tag-value">Trenggalek, ID</span>
           </div>
           <div class="name-tag">
             <span class="name-tag-label">yrs</span>
-            <span class="name-tag-value">6+</span>
+            <span class="name-tag-value">1+</span>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
             that don't leak money, and interfaces that don't lie to their users.
           </p>
           <p>
-            Six years across agency, startup, and scale-up environments. I've shipped
+            One year across agency, startup, and scale-up environments. I've shipped
             fintech dashboards, real-time logistics platforms, and developer tooling
             used by thousands. I care about <em>the seams</em> as much as the surfaces.
           </p>
@@ -95,9 +95,9 @@
 
 <script setup>
 const stats = [
-  { value: '6+',   label: 'Years exp.' },
-  { value: '40+',  label: 'Projects shipped' },
-  { value: '12',   label: 'OSS contributions' },
+  { value: '1+',   label: 'Years exp.' },
+  { value: '2+',  label: 'Projects shipped' },
+  { value: '3',   label: 'Clients' },
   { value: '∞',    label: 'Coffee consumed' }
 ]
 </script>

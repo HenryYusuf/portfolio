@@ -6,9 +6,9 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Alex Vega — Full-Stack Developer',
-  description: 'Full-stack developer crafting precise, performant digital experiences. Specialising in TypeScript, Nuxt, Node.js, and distributed systems.',
-  ogTitle: 'Alex Vega — Full-Stack Developer',
+  title: 'Henry Baharudin Yusuf — Full-Stack Developer',
+  description: 'Full-stack developer crafting precise, performant digital experiences. Specialising in PHP, Laravel, TypeScript, Nuxt, Node.js, and distributed systems.',
+  ogTitle: 'Henry Baharudin Yusuf — Full-Stack Developer',
   ogDescription: 'Full-stack developer crafting precise, performant digital experiences.',
   twitterCard: 'summary_large_image'
 })
@@ -38,7 +38,7 @@ const mobileOpen = ref(false)
         <!-- Logo / Identity -->
         <a href="#" class="nav-logo" aria-label="Home">
           <span class="nav-logo-bracket text-accent">[</span>
-          <span class="nav-logo-name">av_</span>
+          <span class="nav-logo-name">hy_</span>
           <span class="nav-logo-bracket text-accent">]</span>
         </a>
 
@@ -62,7 +62,7 @@ const mobileOpen = ref(false)
           </button>
 
           <a
-            href="https://github.com"
+            href="https://github.com/HenryYusuf"
             target="_blank"
             rel="noopener"
             class="icon-btn"
@@ -112,8 +112,8 @@ const mobileOpen = ref(false)
     <footer class="site-footer">
       <div class="footer-inner">
         <p class="footer-copy">
-          <span class="text-accent">©</span> {{ new Date().getFullYear() }} Alex Vega.
-          Built with Nuxt & precision.
+          <span class="text-accent">©</span> {{ new Date().getFullYear() }} Henry Yusuf.
+          Built with Nuxt.
         </p>
         <p class="footer-command">
           <span class="text-muted">~/portfolio</span>
