@@ -1,30 +1,94 @@
 <template>
-  <section id="about" class="about-section" aria-labelledby="about-heading">
+  <section
+    id="about"
+    class="about-section"
+    aria-labelledby="about-heading"
+  >
     <div class="about-inner">
-
       <!-- Left: identity block -->
       <div class="about-identity animate-slide-in-left">
         <!-- Avatar -->
-        <div class="avatar-frame" aria-hidden="true">
+        <div
+          class="avatar-frame"
+          aria-hidden="true"
+        >
           <div class="avatar-image">
-            <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <svg
+              viewBox="0 0 160 160"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
               <!-- Abstract developer portrait placeholder -->
-              <rect width="160" height="160" fill="var(--bg-card)"/>
+              <rect
+                width="160"
+                height="160"
+                fill="var(--bg-card)"
+              />
               <!-- Head -->
-              <ellipse cx="80" cy="62" rx="32" ry="34" fill="var(--surface-raised, #1c2426)"/>
+              <ellipse
+                cx="80"
+                cy="62"
+                rx="32"
+                ry="34"
+                fill="var(--surface-raised, #1c2426)"
+              />
               <!-- Shoulders -->
-              <path d="M20 140 C20 100 50 90 80 90 C110 90 140 100 140 140Z"
-                fill="var(--surface-raised, #1c2426)"/>
+              <path
+                d="M20 140 C20 100 50 90 80 90 C110 90 140 100 140 140Z"
+                fill="var(--surface-raised, #1c2426)"
+              />
               <!-- Eye details -->
-              <ellipse cx="68" cy="58" rx="4" ry="5" fill="var(--accent)" opacity="0.9"/>
-              <ellipse cx="92" cy="58" rx="4" ry="5" fill="var(--accent)" opacity="0.9"/>
+              <ellipse
+                cx="68"
+                cy="58"
+                rx="4"
+                ry="5"
+                fill="var(--accent)"
+                opacity="0.9"
+              />
+              <ellipse
+                cx="92"
+                cy="58"
+                rx="4"
+                ry="5"
+                fill="var(--accent)"
+                opacity="0.9"
+              />
               <!-- Terminal lines on shirt -->
-              <rect x="58" y="106" width="44" height="2" rx="1" fill="var(--accent)" opacity="0.4"/>
-              <rect x="62" y="114" width="36" height="2" rx="1" fill="var(--accent)" opacity="0.25"/>
-              <rect x="66" y="122" width="28" height="2" rx="1" fill="var(--accent)" opacity="0.15"/>
+              <rect
+                x="58"
+                y="106"
+                width="44"
+                height="2"
+                rx="1"
+                fill="var(--accent)"
+                opacity="0.4"
+              />
+              <rect
+                x="62"
+                y="114"
+                width="36"
+                height="2"
+                rx="1"
+                fill="var(--accent)"
+                opacity="0.25"
+              />
+              <rect
+                x="66"
+                y="122"
+                width="28"
+                height="2"
+                rx="1"
+                fill="var(--accent)"
+                opacity="0.15"
+              />
             </svg>
           </div>
-          <div class="avatar-ring" aria-hidden="true" />
+          <div
+            class="avatar-ring"
+            aria-hidden="true"
+          />
         </div>
 
         <!-- Name card -->
@@ -54,8 +118,11 @@
           <span class="section-label">01 / about</span>
         </div>
 
-        <h2 id="about-heading" class="about-heading animate-slide-up">
-          Craft matters.<br />
+        <h2
+          id="about-heading"
+          class="about-heading animate-slide-up"
+        >
+          Craft matters.<br>
           <em class="heading-em">Always has.</em>
         </h2>
 
@@ -83,22 +150,25 @@
             class="stat-item"
             :style="`animation-delay: ${0.4 + i * 0.1}s`"
           >
-            <div class="stat-value text-accent">{{ stat.value }}</div>
-            <div class="stat-label">{{ stat.label }}</div>
+            <div class="stat-value text-accent">
+              {{ stat.value }}
+            </div>
+            <div class="stat-label">
+              {{ stat.label }}
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </template>
 
 <script setup>
 const stats = [
-  { value: '1+',   label: 'Years exp.' },
-  { value: '2+',  label: 'Projects shipped' },
-  { value: '3',   label: 'Clients' },
-  { value: '∞',    label: 'Coffee consumed' }
+  { value: '1+', label: 'Years exp.' },
+  { value: '2+', label: 'Projects shipped' },
+  { value: '3', label: 'Clients' },
+  { value: '∞', label: 'Coffee consumed' }
 ]
 </script>
 

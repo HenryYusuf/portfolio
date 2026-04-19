@@ -8,9 +8,8 @@ const phrases = [
 
 const displayed = ref('')
 const phraseIdx = ref(0)
-const charIdx   = ref(0)
-const deleting  = ref(false)
-const done      = ref(false)
+const charIdx = ref(0)
+const deleting = ref(false)
 
 let timer = null
 
@@ -40,24 +39,46 @@ function tick() {
   timer = setTimeout(tick, speed)
 }
 
-onMounted(() => { timer = setTimeout(tick, 800) })
+onMounted(() => {
+  timer = setTimeout(tick, 800)
+})
 onUnmounted(() => clearTimeout(timer))
 </script>
 
 <template>
-  <section id="hero" class="hero" aria-label="Introduction">
+  <section
+    id="hero"
+    class="hero"
+    aria-label="Introduction"
+  >
     <!-- Ambient vertical labels -->
-    <span class="ambient-label ambient-left" aria-hidden="true">FULL-STACK</span>
-    <span class="ambient-label ambient-right" aria-hidden="true">DEVELOPER</span>
+    <span
+      class="ambient-label ambient-left"
+      aria-hidden="true"
+    >FULL-STACK</span>
+    <span
+      class="ambient-label ambient-right"
+      aria-hidden="true"
+    >DEVELOPER</span>
 
     <!-- Grid lines decoration -->
-    <div class="hero-grid" aria-hidden="true">
-      <div v-for="i in 6" :key="i" class="grid-line" />
+    <div
+      class="hero-grid"
+      aria-hidden="true"
+    >
+      <div
+        v-for="i in 6"
+        :key="i"
+        class="grid-line"
+      />
     </div>
 
     <div class="hero-content">
       <!-- Terminal prompt line -->
-      <div class="terminal-prompt animate-slide-up" aria-hidden="true">
+      <div
+        class="terminal-prompt animate-slide-up"
+        aria-hidden="true"
+      >
         <span class="shell-user text-accent">henry@yusuf</span>
         <span class="shell-sep text-dim">:</span>
         <span class="shell-dir text-dim">~/portfolio</span>
@@ -68,40 +89,65 @@ onUnmounted(() => clearTimeout(timer))
       <!-- Main heading -->
       <h1 class="hero-heading animate-slide-up delay-200">
         <span class="hero-name">Henry Yusuf</span>
-        <br />
+        <br>
         <span class="hero-role">I&nbsp;</span>
         <span class="hero-typewriter text-accent">{{ displayed }}</span>
-        <span class="hero-cursor text-accent animate-blink" aria-hidden="true">█</span>
+        <span
+          class="hero-cursor text-accent animate-blink"
+          aria-hidden="true"
+        >█</span>
       </h1>
 
       <!-- Sub line -->
       <p class="hero-sub animate-slide-up delay-400">
-        Full-stack developer · 1 years · TypeScript, Nuxt, Go, PHP, Laravel<br />
+        Full-stack developer · 1 years · TypeScript, Nuxt, Go, PHP, Laravel<br>
         Building scalable and maintainable systems.
       </p>
 
       <!-- CTAs -->
       <div class="hero-ctas animate-slide-up delay-600">
-        <a href="#projects" class="cta-primary" id="hero-projects-cta">
+        <a
+          id="hero-projects-cta"
+          href="#projects"
+          class="cta-primary"
+        >
           View work
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
-        <a href="#contact" class="cta-ghost" id="hero-contact-cta">
+        <a
+          id="hero-contact-cta"
+          href="#contact"
+          class="cta-ghost"
+        >
           Get in touch
         </a>
       </div>
 
       <!-- Status pill -->
-      <div class="status-pill animate-fade-in delay-800" aria-label="Availability status">
+      <div
+        class="status-pill animate-fade-in delay-800"
+        aria-label="Availability status"
+      >
         <span class="status-dot" />
         Available for new projects
       </div>
     </div>
 
     <!-- Scroll indicator -->
-    <div class="scroll-hint animate-fade-in delay-800" aria-hidden="true">
+    <div
+      class="scroll-hint animate-fade-in delay-800"
+      aria-hidden="true"
+    >
       <span class="scroll-label">scroll</span>
       <div class="scroll-line" />
     </div>

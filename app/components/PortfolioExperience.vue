@@ -1,67 +1,88 @@
 <script setup>
 const experiences = [
   {
-    id: "P01",
-    role: "Customer Technical Support",
-    status: "ACTIVE",
-    node: "INTERNAL://JAGOAN_HOSTING",
-    uptime: "730d",
+    id: 'P01',
+    role: 'Customer Technical Support',
+    status: 'ACTIVE',
+    node: 'INTERNAL://JAGOAN_HOSTING',
+    uptime: '730d',
     logs: [
-      { status: "[ OK ]", text: "Provide technical assistance to customers regarding hosting and VPS services." },
-      { status: "[ OK ]", text: "Troubleshoot and resolve customer issues related to hosting and VPS services." },
-      { status: "[ OK ]", text: "Escalate complex issues to senior engineers and follow up on resolution." },
-      { status: "[ OK ]", text: "Document solutions and contribute to the knowledge base." },
+      { status: '[ OK ]', text: 'Provide technical assistance to customers regarding hosting and VPS services.' },
+      { status: '[ OK ]', text: 'Troubleshoot and resolve customer issues related to hosting and VPS services.' },
+      { status: '[ OK ]', text: 'Escalate complex issues to senior engineers and follow up on resolution.' },
+      { status: '[ OK ]', text: 'Document solutions and contribute to the knowledge base.' }
     ],
-    externals: ["cPanel", "WHM", "DirectAdmin", "Webuzo", "VPS", "Cloudflare", "Litespeed"]
+    externals: ['cPanel', 'WHM', 'DirectAdmin', 'Webuzo', 'VPS', 'Cloudflare', 'Litespeed']
   }
 ]
 </script>
 
 <template>
-  <section id="experience" class="exp-section" aria-labelledby="exp-heading">
+  <section
+    id="experience"
+    class="exp-section"
+    aria-labelledby="exp-heading"
+  >
     <div class="exp-inner">
       <div class="section-divider animate-flicker-in">
         <span class="section-label">02 / experiences</span>
       </div>
 
-      <h2 id="exp-heading" class="exp-heading animate-slide-up">
-        System <span class="text-accent">uptime.</span><br />
+      <h2
+        id="exp-heading"
+        class="exp-heading animate-slide-up"
+      >
+        System <span class="text-accent">uptime.</span><br>
         <span class="sub-heading">Production history</span>
       </h2>
 
       <div class="timeline-container">
-        
-        <article 
-          v-for="(exp, i) in experiences" 
-          :key="exp.id" 
+        <article
+          v-for="(exp, i) in experiences"
+          :key="exp.id"
           class="process-card animate-slide-up"
           :style="`animation-delay: ${0.2 + i * 0.15}s`"
         >
           <!-- Connection node to the timeline -->
-          <div class="timeline-node" :class="{ 'node-active': exp.status === 'ACTIVE' }"></div>
+          <div
+            class="timeline-node"
+            :class="{ 'node-active': exp.status === 'ACTIVE' }"
+          />
 
           <header class="process-header">
-            <h3 class="pid-title">PID: {{ exp.role }}</h3>
+            <h3 class="pid-title">
+              PID: {{ exp.role }}
+            </h3>
             <div class="telemetry-strip">
               <span class="telemetry-item">
-                <span class="t-label">STATUS:</span> 
+                <span class="t-label">STATUS:</span>
                 <span :class="['t-value', `status-${exp.status.toLowerCase()}`]">[ {{ exp.status }} ]</span>
               </span>
-              <span class="t-divider" aria-hidden="true">//</span>
+              <span
+                class="t-divider"
+                aria-hidden="true"
+              >//</span>
               <span class="telemetry-item">
-                <span class="t-label">NODE:</span> 
+                <span class="t-label">NODE:</span>
                 <span class="t-value">{{ exp.node }}</span>
               </span>
-              <span class="t-divider" aria-hidden="true">//</span>
+              <span
+                class="t-divider"
+                aria-hidden="true"
+              >//</span>
               <span class="telemetry-item">
-                <span class="t-label">UPTIME:</span> 
+                <span class="t-label">UPTIME:</span>
                 <span class="t-value">{{ exp.uptime }}</span>
               </span>
             </div>
           </header>
 
           <div class="execution-logs">
-            <div v-for="(log, li) in exp.logs" :key="li" class="log-entry">
+            <div
+              v-for="(log, li) in exp.logs"
+              :key="li"
+              class="log-entry"
+            >
               <span class="log-status">{{ log.status }}</span>
               <span class="log-text">{{ log.text }}</span>
             </div>
@@ -70,8 +91,15 @@ const experiences = [
           <footer class="dependency-manifest">
             <span class="t-label">EXTERNALS:</span>
             <span class="dep-bracket">[</span>
-            <span v-for="(dep, di) in exp.externals" :key="dep" class="dep-item">
-              <span class="dep-name">{{ dep }}</span><span v-if="di < exp.externals.length - 1" class="dep-comma">, </span>
+            <span
+              v-for="(dep, di) in exp.externals"
+              :key="dep"
+              class="dep-item"
+            >
+              <span class="dep-name">{{ dep }}</span><span
+                v-if="di < exp.externals.length - 1"
+                class="dep-comma"
+              >, </span>
             </span>
             <span class="dep-bracket">]</span>
           </footer>
@@ -322,15 +350,15 @@ const experiences = [
 @media (max-width: 768px) {
   .exp-section { padding: 5rem 0; }
   .exp-heading { font-size: 2.2rem; margin-bottom: 3.5rem; }
-  
+
   .timeline-container {
     padding-left: 2rem;
   }
-  
+
   .timeline-node {
     left: calc(-1.5rem - 4px);
   }
-  
+
   .process-card {
     padding: 1.5rem;
   }
@@ -340,11 +368,11 @@ const experiences = [
     align-items: flex-start;
     gap: 0.6rem;
   }
-  
+
   .t-divider {
     display: none;
   }
-  
+
   .log-entry {
     gap: 0.75rem;
   }

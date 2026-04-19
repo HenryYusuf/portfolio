@@ -17,7 +17,7 @@ const skillGroups = [
       { name: 'PHP/Laravel', status: 'CORE', role: 'Web Application Framework' },
       { name: 'Node.js', status: 'CORE', role: 'Server Runtime' },
       { name: 'PostgreSQL', status: 'CORE', role: 'Relational Data' },
-      { name: 'Go', status: 'STK', role: 'High-Performance APIs' },
+      { name: 'Go', status: 'STK', role: 'High-Performance APIs' }
     ]
   },
   {
@@ -32,7 +32,7 @@ const skillGroups = [
     category: 'Craft',
     icon: '◇',
     skills: [
-      { name: 'Documentation', status: 'CORE', role: 'Knowledge Transfer' },
+      { name: 'Documentation', status: 'CORE', role: 'Knowledge Transfer' }
     ]
   }
 ]
@@ -41,13 +41,29 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
 </script>
 
 <template>
-  <section id="skills" class="skills-section" aria-labelledby="skills-heading">
-
+  <section
+    id="skills"
+    class="skills-section"
+    aria-labelledby="skills-heading"
+  >
     <!-- Scrolling ticker strip (the diagonal grid-breaker) -->
-    <div class="skills-ticker" aria-hidden="true">
+    <div
+      class="skills-ticker"
+      aria-hidden="true"
+    >
       <div class="ticker-track">
-        <span v-for="(t, i) in [...ticker, ...ticker, ...ticker, ...ticker]" :key="`t-${i}`" class="ticker-item">
-          {{ t }}<svg width="6" height="6" viewBox="0 0 6 6" fill="var(--accent)" aria-hidden="true"><polygon points="3,0 6,6 0,6"/></svg>
+        <span
+          v-for="(t, i) in [...ticker, ...ticker, ...ticker, ...ticker]"
+          :key="`t-${i}`"
+          class="ticker-item"
+        >
+          {{ t }}<svg
+            width="6"
+            height="6"
+            viewBox="0 0 6 6"
+            fill="var(--accent)"
+            aria-hidden="true"
+          ><polygon points="3,0 6,6 0,6" /></svg>
         </span>
       </div>
     </div>
@@ -57,8 +73,11 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
         <span class="section-label">03 / skills</span>
       </div>
 
-      <h2 id="skills-heading" class="skills-heading animate-slide-up">
-        Tools of the<br />
+      <h2
+        id="skills-heading"
+        class="skills-heading animate-slide-up"
+      >
+        Tools of the<br>
         <span class="text-accent">trade.</span>
       </h2>
 
@@ -70,11 +89,19 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
           :style="`animation-delay: ${0.1 + gi * 0.12}s`"
         >
           <header class="skill-group-header">
-            <span class="skill-icon text-accent" aria-hidden="true">{{ group.icon }}</span>
-            <h3 class="skill-group-name">{{ group.category }}</h3>
+            <span
+              class="skill-icon text-accent"
+              aria-hidden="true"
+            >{{ group.icon }}</span>
+            <h3 class="skill-group-name">
+              {{ group.category }}
+            </h3>
           </header>
 
-          <ul class="skill-list" role="list">
+          <ul
+            class="skill-list"
+            role="list"
+          >
             <li
               v-for="skill in group.skills"
               :key="skill.name"
@@ -82,7 +109,10 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
             >
               <span :class="['status-tag', `status-${skill.status.toLowerCase()}`]">[ {{ skill.status }} ]</span>
               <span class="skill-name">{{ skill.name }}</span>
-              <span class="leader-dots" aria-hidden="true"></span>
+              <span
+                class="leader-dots"
+                aria-hidden="true"
+              />
               <span class="skill-role">/ {{ skill.role }}</span>
             </li>
           </ul>
@@ -302,7 +332,7 @@ const ticker = ['PHP', 'Laravel', 'TypeScript', 'Vue', 'Nuxt', 'Node.js', 'Go', 
   .skills-section { padding: 5rem 0; }
   .skills-grid { grid-template-columns: 1fr; }
   .skills-heading { font-size: 2.2rem; }
-  
+
   .skill-item {
     gap: 0.5rem;
   }

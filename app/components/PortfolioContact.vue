@@ -34,9 +34,18 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+  <section
+    id="contact"
+    class="contact-section"
+    aria-labelledby="contact-heading"
+  >
     <!-- Decorative oversized text -->
-    <div class="contact-ambient" aria-hidden="true">REACH OUT</div>
+    <div
+      class="contact-ambient"
+      aria-hidden="true"
+    >
+      REACH OUT
+    </div>
 
     <div class="contact-inner">
       <div class="contact-left">
@@ -44,8 +53,11 @@ async function handleSubmit() {
           <span class="section-label">05 / contact</span>
         </div>
 
-        <h2 id="contact-heading" class="contact-heading animate-slide-up">
-          Let's build<br />
+        <h2
+          id="contact-heading"
+          class="contact-heading animate-slide-up"
+        >
+          Let's build<br>
           <span class="text-accent">together.</span>
         </h2>
 
@@ -56,16 +68,41 @@ async function handleSubmit() {
 
         <!-- Direct links -->
         <div class="contact-channels animate-slide-up delay-300">
-          <a href="mailto:baharhenry10@gmail.com" class="channel-item" id="contact-email">
-            <span class="channel-icon text-accent" aria-hidden="true">@</span>
+          <a
+            id="contact-email"
+            href="mailto:baharhenry10@gmail.com"
+            class="channel-item"
+          >
+            <span
+              class="channel-icon text-accent"
+              aria-hidden="true"
+            >@</span>
             <span class="channel-label">baharhenry10@gmail.com</span>
           </a>
-          <a href="https://github.com/HenryYusuf" target="_blank" rel="noopener" class="channel-item" id="contact-github">
-            <span class="channel-icon text-accent" aria-hidden="true">◈</span>
+          <a
+            id="contact-github"
+            href="https://github.com/HenryYusuf"
+            target="_blank"
+            rel="noopener"
+            class="channel-item"
+          >
+            <span
+              class="channel-icon text-accent"
+              aria-hidden="true"
+            >◈</span>
             <span class="channel-label">github.com/HenryYusuf</span>
           </a>
-          <a href="https://linkedin.com/in/henryby/" target="_blank" rel="noopener" class="channel-item" id="contact-linkedin">
-            <span class="channel-icon text-accent" aria-hidden="true">◆</span>
+          <a
+            id="contact-linkedin"
+            href="https://linkedin.com/in/henryby/"
+            target="_blank"
+            rel="noopener"
+            class="channel-item"
+          >
+            <span
+              class="channel-icon text-accent"
+              aria-hidden="true"
+            >◆</span>
             <span class="channel-label">linkedin.com/in/henryby</span>
           </a>
         </div>
@@ -73,7 +110,10 @@ async function handleSubmit() {
 
       <!-- Form -->
       <div class="contact-right animate-slide-up delay-200">
-        <Transition name="form-fade" mode="out-in">
+        <Transition
+          name="form-fade"
+          mode="out-in"
+        >
           <form
             v-if="!sent"
             class="contact-form"
@@ -83,7 +123,10 @@ async function handleSubmit() {
             <div class="form-row">
               <!-- Name -->
               <div class="form-field">
-                <label for="cf-name" class="form-label">
+                <label
+                  for="cf-name"
+                  class="form-label"
+                >
                   name <span class="req text-accent">*</span>
                 </label>
                 <input
@@ -94,12 +137,15 @@ async function handleSubmit() {
                   placeholder="Jane Smith"
                   autocomplete="name"
                   required
-                />
+                >
               </div>
 
               <!-- Email -->
               <div class="form-field">
-                <label for="cf-email" class="form-label">
+                <label
+                  for="cf-email"
+                  class="form-label"
+                >
                   email <span class="req text-accent">*</span>
                 </label>
                 <input
@@ -110,14 +156,18 @@ async function handleSubmit() {
                   placeholder="jane@company.com"
                   autocomplete="email"
                   required
-                />
+                >
               </div>
             </div>
 
             <!-- Reason -->
             <div class="form-field">
               <label class="form-label">reason</label>
-              <div class="reason-group" role="group" aria-label="Contact reason">
+              <div
+                class="reason-group"
+                role="group"
+                aria-label="Contact reason"
+              >
                 <label
                   v-for="r in reasons"
                   :key="r.value"
@@ -130,7 +180,7 @@ async function handleSubmit() {
                     name="reason"
                     :value="r.value"
                     class="sr-only"
-                  />
+                  >
                   {{ r.label }}
                 </label>
               </div>
@@ -138,7 +188,10 @@ async function handleSubmit() {
 
             <!-- Message -->
             <div class="form-field">
-              <label for="cf-message" class="form-label">
+              <label
+                for="cf-message"
+                class="form-label"
+              >
                 message <span class="req text-accent">*</span>
               </label>
               <textarea
@@ -152,7 +205,11 @@ async function handleSubmit() {
             </div>
 
             <!-- Error -->
-            <p v-if="error" class="form-error" role="alert">
+            <p
+              v-if="error"
+              class="form-error"
+              role="alert"
+            >
               <span aria-hidden="true">⚠</span> {{ error }}
             </p>
 
@@ -164,20 +221,45 @@ async function handleSubmit() {
               :disabled="sending"
             >
               <span v-if="sending">Sending…</span>
-              <span v-else class="flex items-center gap-2">
+              <span
+                v-else
+                class="flex items-center gap-2"
+              >
                 Send message
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </span>
             </button>
           </form>
 
           <!-- Success state -->
-          <div v-else class="sent-state" role="status" aria-live="polite">
-            <div class="sent-icon text-accent" aria-hidden="true">✓</div>
-            <h3 class="sent-heading">Message received.</h3>
-            <p class="sent-sub">I'll reply within 24 hours. Until then — keep building.</p>
+          <div
+            v-else
+            class="sent-state"
+            role="status"
+            aria-live="polite"
+          >
+            <div
+              class="sent-icon text-accent"
+              aria-hidden="true"
+            >
+              ✓
+            </div>
+            <h3 class="sent-heading">
+              Message received.
+            </h3>
+            <p class="sent-sub">
+              I'll reply within 24 hours. Until then — keep building.
+            </p>
           </div>
         </Transition>
       </div>
