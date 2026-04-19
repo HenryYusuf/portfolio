@@ -5,11 +5,6 @@ services:
       dockerfile: dockerfile
     container_name: henry-yusuf-portfolio
     restart: unless-stopped
-    networks:
-      - bridge
+    network_mode: bridge
     environment:
       - NODE_ENV=production
-
-networks:
-  bridge:
-    external: true
