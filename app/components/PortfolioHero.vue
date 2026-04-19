@@ -1,7 +1,6 @@
 <script setup>
 const phrases = [
   'build scalable APIs.',
-  'architect cloud systems.',
   'ship pixel-perfect UIs.',
   'write clean TypeScript.',
   'solve hard problems.'
@@ -77,7 +76,7 @@ onUnmounted(() => clearTimeout(timer))
 
       <!-- Sub line -->
       <p class="hero-sub animate-slide-up delay-400">
-        Full-stack engineer · 1 years · TypeScript, Nuxt, Go, PHP, Laravel<br />
+        Full-stack developer · 1 years · TypeScript, Nuxt, Go, PHP, Laravel<br />
         Building scalable and maintainable systems.
       </p>
 

@@ -164,7 +164,7 @@ async function handleSubmit() {
               :disabled="sending"
             >
               <span v-if="sending">Sending…</span>
-              <span v-else>
+              <span v-else class="flex items-center gap-2">
                 Send message
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7"/>

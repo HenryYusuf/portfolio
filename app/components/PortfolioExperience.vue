@@ -1,42 +1,18 @@
 <script setup>
 const experiences = [
   {
-    id: "P03",
-    role: "SENIOR_FRONTEND_ENGINEER",
-    status: "ACTIVE",
-    node: "INTERNAL://TECH_CORP",
-    uptime: "1,240d",
-    logs: [
-      { status: "[ OK ]", text: "Architected core UI infrastructure; reduced bundle size by 40%." },
-      { status: "[ SHIP ]", text: "Orchestrated delivery cycles; maintained 99.9% deployment stability." },
-      { status: "[ OK ]", text: "Established robust design system tokens mapped to framework-agnostic CSS." }
-    ],
-    externals: ["Vue.js", "Nuxt 3", "TypeScript", "TailwindCSS"]
-  },
-  {
-    id: "P02",
-    role: "FULL_STACK_DEVELOPER",
-    status: "ARCHIVED",
-    node: "EXTERNAL://STEALTH_STARTUP",
-    uptime: "850d",
-    logs: [
-      { status: "[ OK ]", text: "Engineered real-time data synchronization using WebSockets and Redis." },
-      { status: "[ OK ]", text: "Migrated legacy monolithic systems into distributed containerized services." },
-      { status: "[ SHIP ]", text: "Deployed functional prototypes scaling to 10k concurrent connections." }
-    ],
-    externals: ["Node.js", "Express", "Vue.js", "PostgreSQL", "Docker"]
-  },
-  {
     id: "P01",
-    role: "UI_DEVELOPER",
-    status: "ARCHIVED",
-    node: "EXTERNAL://AGENCY_X",
-    uptime: "420d",
+    role: "Customer Technical Support",
+    status: "ACTIVE",
+    node: "INTERNAL://JAGOAN_HOSTING",
+    uptime: "730d",
     logs: [
-      { status: "[ OK ]", text: "Delivered 15+ high-fidelity client interfaces with pixel-perfect precision." },
-      { status: "[ OK ]", text: "Implemented responsive accessibility layers achieving WCAG AA compliance." }
+      { status: "[ OK ]", text: "Provide technical assistance to customers regarding hosting and VPS services." },
+      { status: "[ OK ]", text: "Troubleshoot and resolve customer issues related to hosting and VPS services." },
+      { status: "[ OK ]", text: "Escalate complex issues to senior engineers and follow up on resolution." },
+      { status: "[ OK ]", text: "Document solutions and contribute to the knowledge base." },
     ],
-    externals: ["HTML5", "CSS3", "JavaScript", "Figma"]
+    externals: ["cPanel", "WHM", "DirectAdmin", "Webuzo", "VPS", "Cloudflare", "Litespeed"]
   }
 ]
 </script>

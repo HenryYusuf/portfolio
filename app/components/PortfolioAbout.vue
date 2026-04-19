@@ -31,7 +31,7 @@
         <div class="name-card">
           <div class="name-tag">
             <span class="name-tag-label">name</span>
-            <span class="name-tag-value">Henry Yusuf</span>
+            <span class="name-tag-value">Henry Baharudin Yusuf</span>
           </div>
           <div class="name-tag">
             <span class="name-tag-label">role</span>
@@ -65,9 +65,9 @@
             that don't leak money, and interfaces that don't lie to their users.
           </p>
           <p>
-            One year across agency, startup, and scale-up environments. I've shipped
-            fintech dashboards, real-time logistics platforms, and developer tooling
-            used by thousands. I care about <em>the seams</em> as much as the surfaces.
+            One year across hosting provider and startup environments. I've shipped
+            food delivery platform, pregnancy health app, and IT support tooling
+            used by hundreds. I care about <em>the seams</em> as much as the surfaces.
           </p>
           <p>
             When I'm not writing code, I'm writing about it — or teaching it.
