@@ -1,0 +1,13 @@
+node_modules
+.output
+.nuxt
+.git
+.github
+dist
+*.log
+.DS_Store
+.env
+.agents
+dockerfile
+Dockerfile
+docker-compose.yml

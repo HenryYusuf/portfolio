@@ -1,0 +1,15 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: henry-yusuf-portfolio
+    restart: unless-stopped
+    networks:
+      - bridge
+    environment:
+      - NODE_ENV=production
+
+networks:
+  bridge:
+    external: true
